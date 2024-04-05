@@ -56,7 +56,12 @@ function activate(context) {
 
 	context.subscriptions.push(
 		vscode.commands.registerCommand('html-formatter--wrap-all-attributes.format', function () {
-			vscode.window.showInformationMessage('HTML Formatter: "Wrap all attributes" loaded.');
+			const isEnabled = vscode.workspace.getConfiguration().get('html-formatter--wrap-all-attributes.enableFormatter', true);
+			if (!isEnabled) {
+				vscode.window.showInformationMessage('HTML Formatter: "Wrap all attributes" is enabled.');
+			} else {
+				vscode.window.showInformationMessage('HTML Formatter: "Wrap all attributes" is disabled. Enable it in the settings.');
+			}
 		})
 	);
 }

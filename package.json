@@ -2,6 +2,13 @@
   "name": "html-formatter--wrap-all-attributes",
   "displayName": "HTML Formatter: Wrap all attributes",
   "description": "Format HTML by wrapping all attributes, no matter if there is only one or more.",
+  "scripts": {
+    "vscode:prepublish": "npm run esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./extension.js --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./"
+  },
   "version": "0.0.1",
   "author": {
     "name": "Lucas Tesseron",
@@ -30,7 +37,7 @@
     "commands": [
       {
         "command": "html-formatter--wrap-all-attributes.format",
-        "title": "Format HTML: Wrap all attributes"
+        "title": "HTML Formatter: Is extension loaded?"
       }
     ],
     "configuration": {
@@ -63,6 +70,7 @@
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@types/vscode": "^1.87.0",
+    "esbuild": "^0.20.2",
     "eslint": "^8.57.0",
     "typescript": "^5.3.3"
   },
