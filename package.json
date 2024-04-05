@@ -14,6 +14,10 @@
     "name": "Lucas Tesseron",
     "email": "https://github.com/kzlucas"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kzlucas/vscode-ext-html-formatter-force-wrap-attributes"
+  },
   "engines": {
     "vscode": "^1.87.0"
   },
