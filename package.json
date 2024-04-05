@@ -3,6 +3,10 @@
   "displayName": "HTML Formatter: Wrap all attributes",
   "description": "Format HTML by wrapping all attributes, no matter if there is only one or more.",
   "version": "0.0.1",
+  "author": {
+    "name": "Lucas Tesseron",
+    "email": "https://github.com/kzlucas"
+  },
   "engines": {
     "vscode": "^1.87.0"
   },
