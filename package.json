@@ -35,7 +35,22 @@
         "HtmlFormatterWrapAll.enableFormatter": {
           "type": "boolean",
           "default": true,
-          "description": "Enable/Disable the HTML -Wrap all attributes- formatter"
+          "description": "Enable/Disable the custom HTML 'Wrap all attributes' formatter"
+        },
+        "HtmlFormatterWrapAll.indentInnerHtml": {
+          "type": "boolean",
+          "default": true,
+          "description": "Indent <head> and <body> sections"
+        },
+        "HtmlFormatterWrapAll.wrapAttributedIndentSize": {
+          "type": "number",
+          "default": 2,
+          "description": "Indent size for wrapped attributes"
+        },
+        "HtmlFormatterWrapAll.preserveNewlines": {
+          "type": "boolean",
+          "default": true,
+          "description": "Preserve newlines"
         }
       }
     }
