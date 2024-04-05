@@ -1,0 +1,53 @@
+{
+  "name": "html-formatter--wrap-all-attributes",
+  "displayName": "HTML Formatter: Wrap all attributes",
+  "description": "Format HTML by wrapping all attributes, no matter if there is only one or more.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "keywords": [
+    "html",
+    "format",
+    "wrap",
+    "attributes"
+  ],
+  "categories": [
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:html"
+  ],
+  "capabilities": {
+    "documentFormattingProvider": "true"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "html-formatter--wrap-all-attributes.format",
+        "title": "Format HTML: Wrap all attributes"
+      }
+    ],
+    "configuration": {
+      "title": "HTML Formatter: Wrap all attributes",
+      "properties": {
+        "HtmlFormatterWrapAll.enableFormatter": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/Disable the HTML -Wrap all attributes- formatter"
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "js-beautify": "^1.15.1"
+  }
+}
