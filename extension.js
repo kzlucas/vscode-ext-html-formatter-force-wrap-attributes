@@ -38,10 +38,23 @@ class HTMLDocumentFormatter {
 			wrap_attributes_min_attrs: 0, // force-wrap all attributes
 			content_unformatted: ['pre', 'code'], // tags that should not be formatted
 		}
-		const output = beautify_html(text, formatter_options);
+
+		// HTML inner text should return to new line
+		let indentedHtml = text.replace(/<(?!script)[^<>]+>([^<>]+)<\/[^<>\/]+>/gm, (match, p1) => {
+			// ignore empty text
+			if (p1.replace(/\s/g, '') == '') {
+				return match;
+			}
+			// add line breaks
+			else
+				return match.replace(p1, `\n${p1.trim()}\n`);
+		});
+
+		// Format the HTML (indentation, new lines, etc.) using js-beautify
+		indentedHtml = beautify_html(indentedHtml, formatter_options);
 
 		return Promise.resolve([
-			new vscode.TextEdit(range, output),
+			new vscode.TextEdit(range, indentedHtml),
 		]);
 	}
 }
